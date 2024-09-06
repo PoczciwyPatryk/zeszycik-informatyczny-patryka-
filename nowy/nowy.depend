@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1725621709 source:c:\users\2022 ar\downloads\codeblock\nowy\main.cpp
+	<iostream>
+	<vector>
+	<fstream>
+
