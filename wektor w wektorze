@@ -1,0 +1,9 @@
+ int zmienna;
+    vector<typ vectora> nazwa_vectora;
+
+    vector< vector<typ_wektora>> nazwa_wektora;
+
+    vector<vector<int>> liczby;
+    liczby[0][1];
+
+    vector<int> tmp;
