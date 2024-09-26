@@ -1,18 +1,31 @@
 #include <iostream>
-#include <fstream>
 #include <vector>
+#include <fstream>
 using namespace std;
-vector<int> ulamki;
-
+vector<int> liczby;
 
 int main()
 {
     ifstream plik("dane_ulamki.txt");
-    for(int i=0, i<20; i++);{
-        cout<<ulamki[i]<<endl;
+    int temp;
+    int i=0;
+    while(!plik.eof())
+    {
+        plik >> temp;
+        liczby.push_back(temp);
+        cout<<liczby[i];
+        if(i%2==0)
+        {
+            cout<<" ";
+        }
+        else
+        {
+            cout<<endl;
+        }
+        i++;
     }
-    cout<<"Ulamki"<<endl;
-
+    plik.close();
 
     return 0;
 }
+
