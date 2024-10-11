@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+    int s = 0;
+    cout << "Podaj stopien wielomianu: " << endl;
+    cin >> s;
+    
+    // Tworzenie wektora o rozmiarze s+1 na współczynniki
+    vector<int> tab(s + 1);
+    
+    cout << "Podaj " << s + 1 << " wspolczynniki: " << endl;
+    for (int i = 0; i <= s; i++) {
+        cin >> tab[i];  // Pobieranie współczynników
+    }
+
+    // Przykład: wypisanie współczynników w kolejności od najwyższego stopnia
+    cout << "Wielomian to: ";
+    for (int j = s; j >= 0; j--) {
+        cout << tab[j] << "x^" << j;
+        if (j > 0) cout << " + ";
+    }
+    cout << endl;
+
+    return 0;
+}
