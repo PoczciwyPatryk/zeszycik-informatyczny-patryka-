@@ -1,0 +1,20 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int PS=0;
+    string liczba;
+    cout << "Podaj System w przediale <2,9> : " << endl;
+    cin >> PS;
+    cout << "Podaj liczbe w tym systemie : " << endl;
+    cin >> liczba;
+    int L = liczba[0] - '0';
+    //cout << L << endl;
+    for (int i=1;i<liczba.size();i++){
+        L = L*PS+liczba[i] - '0';
+    }
+    cout << L << endl;
+    return 0;
+}
