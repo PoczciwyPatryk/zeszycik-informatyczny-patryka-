@@ -1,0 +1,31 @@
+SELECT uczniowie.imie, uczniowie.nazwisko, oceny.ocena, oceny.id_przedmiotu
+FROM uczniowie, oceny
+WHERE uczniowie.id_ucznia = oceny.id_ucznia;
+
+SELECT uczniowie.nazwisko, uczniowie.imie, AVG(oceny.ocena) AS "Srednia ocen"
+FROM uczniowie
+JOIN oceny ON uczniowie.id_ucznia = oceny.id_ucznia
+WHERE uczniowie.id_ucznia = 1;
+
+SELECT uczniowie.nazwisko, uczniowie.imie, AVG(oceny.ocena) AS "Srednia ocen"
+FROM uczniowie
+JOIN oceny ON uczniowie.id_ucznia = oceny.id_ucznia
+WHERE uczniowie.id_ucznia = 1 AND oceny.id_przedmiotu = 1;
+
+SELECT uczniowie.nazwisko, uczniowie.imie, przedmioty.nazwa_przedmiotu, oceny.ocena
+FROM uczniowie
+JOIN oceny ON oceny.id_ucznia = uczniowie.id_ucznia
+JOIN przedmioty ON przedmioty.id_przedmiotu = oceny.id_przedmiotu;
+
+SELECT uczniowie.nazwisko, uczniowie.imie, przedmioty.nazwa_przedmiotu, oceny.ocena
+FROM uczniowie
+JOIN oceny ON oceny.id_ucznia = uczniowie.id_ucznia
+JOIN przedmioty ON przedmioty.id_przedmiotu = oceny.id_przedmiotu
+WHERE przedmioty.nazwa_skrocona = "mat";
+
+SELECT uczniowie.nazwisko, uczniowie.imie, przedmioty.nazwa_przedmiotu, AVG(oceny.ocena)
+FROM uczniowie
+JOIN oceny ON oceny.id_ucznia = uczniowie.id_ucznia
+JOIN przedmioty ON przedmioty.id_przedmiotu = oceny.id_przedmiotu
+WHERE przedmioty.nazwa_skrocona = "mat"
+GROUP BY uczniowie.nazwisko;
